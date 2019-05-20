@@ -32,7 +32,7 @@ static HeapTuple TupleParserRead(TupleParser *self, Checker *checker);
 static int64 TupleParserTerm(TupleParser *self);
 static bool TupleParserParam(TupleParser *self, const char *keyword, char *value);
 static void TupleParserDumpParams(TupleParser *self);
-static void TupleParserDumpRecord(TupleParser *self, FILE fp, char *filename);
+static void TupleParserDumpRecord(TupleParser *self, FILE *fp, char *filename);
 
 /**
  * @brief Create a new binary parser.
@@ -127,7 +127,7 @@ TupleParserDumpParams(TupleParser *self)
 }
 
 static void
-TupleParserDumpRecord(TupleParser *self, FILE fp, char *filename)
+TupleParserDumpRecord(TupleParser *self, FILE *fp, char *filename)
 {
 	/* parse error does not happen in TupleParser. */
 }
